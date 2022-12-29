@@ -42,3 +42,4 @@ boto==2.8.0
 lxml==3.1.0
 pyelasticsearch==0.4.1
 django-tastypie-elasticsearch==0.1.0
+
