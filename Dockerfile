@@ -7,7 +7,7 @@ WORKDIR /code
 RUN pip install --upgrade pip
 COPY requirements.txt /code/
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --cache-dir /opt/app/pip_cache
 COPY . /code/
 
 EXPOSE 5000
