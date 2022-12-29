@@ -1,5 +1,5 @@
 numpy==1.6.2
-Django==1.4.2
+Django==4.1.4
 django-tastypie==0.9.14
 urllib3==1.5
 pyes==0.19.1
@@ -42,4 +42,10 @@ boto==2.8.0
 lxml==3.1.0
 pyelasticsearch==0.4.1
 django-tastypie-elasticsearch==0.1.0
+django-crispy-forms==1.13.0
+django-filter==21.1
+django-pandas==0.6.6
+django-utils-six==2.0
+djangorestframework==3.12.4
+
 
