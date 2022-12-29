@@ -1,12 +1,27 @@
-FROM ubuntu
+FROM python:3
 
-RUN apt-get update && apt-get -y install python3-pip
-RUN mkdir /code
-COPY requirements.txt /usr/src/app/
+#set envionment variables
+ENV PYTHONUNBUFFERED 1
 
+# run this before copying requirements for cache efficiency
+RUN pip install --upgrade pip
+
+#set work directory early so remaining paths can be relative
+WORKDIR /ToDoApp
+
+# Adding requirements file to current directory
+# just this file first to cache the pip install step when code changes
+COPY requirements.txt .
+
+#install dependencies
 RUN pip install -r requirements.txt
-COPY . /code/
 
-EXPOSE 5000
+# copy code itself from context to image
+COPY . .
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
+# run from working directory, and separate args in the json syntax
+CMD ["python", "./manage.py", "runserver", "0.0.0.0:8000"]
+
+
+
+
