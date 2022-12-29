@@ -4,7 +4,7 @@ FROM python:3
 ENV PYTHONUNBUFFERED 1
 
 # run this before copying requirements for cache efficiency
-RUN pip install --upgrade pip
+RUN apt-get -y install python3-pip
 
 #set work directory early so remaining paths can be relative
 WORKDIR /ToDoApp
