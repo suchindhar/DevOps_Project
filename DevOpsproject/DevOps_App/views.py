@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def Guvi(request):
-    return HttpResponse('<h1 style="color:Purple">Hello GUVI GEEK</h1>')
+    return HttpResponse('<h1 style="color:Purple">Hello World</h1>')
